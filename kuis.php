@@ -163,6 +163,7 @@ if($_SESSION['nama']=='')
     </form>
 
 <?php
+	include 'koneksi.php';
      $nilai = $_GET['nilai'];
      if(!isset($_POST['skor'])){
           $sql = "INSERT INTO skor (nama, nilai) VALUES ('$nama', '$nilai')";
