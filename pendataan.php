@@ -222,7 +222,7 @@
 
                     <?php
                         if(isset($_POST['submit'])){
-                            $sql = "INSERT INTO PENYEBARAN_COVID (tanggal, provinsi, jumlah_positif, jumlah_sembuh, jumlah_meninggal)
+                            $sql = "INSERT INTO penyebaran_covid (tanggal, provinsi, jumlah_positif, jumlah_sembuh, jumlah_meninggal)
                                     VALUES ('$tanggal', '$getProvinsi', '$jumlahPositif', '$jumlahSembuh', '$jumlahMeninggal')";
 
                             if(mysqli_query($link, $sql)){
