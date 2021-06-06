@@ -22,7 +22,7 @@
 		{
 			//Data akan di edit
 			$edit = mysqli_query($koneksi, "UPDATE penyebaran_covid set
-											 	tanggal = '$_POST[atanngal]',
+											 	tanggal = '$_POST[atanggal]',
 												provinsi = '$_POST[aprovinsi]',
 												jumlah_positif = '$_POST[positif]',
 												jumlah_sembuh = '$_POST[sembuh]',
@@ -48,7 +48,7 @@
 		{
 			//Data akan disimpan Baru
 			$simpan = mysqli_query($koneksi, "INSERT INTO penyebaran_covid (tanggal, provinsi, jumlah_positif, jumlah_sembuh, jumlah_meninggal)
-										  VALUES ('$_POST[atanngal]', 
+										  VALUES ('$_POST[atanggal]', 
 										  		 '$_POST[aprovinsi]', 
 										  		 '$_POST[positif]', 
 										  		 '$_POST[sembuh]',
