@@ -159,19 +159,22 @@ if($_SESSION['nama']=='')
    <section>
 
    <form action="" method="POST">
-        <input type="hidden" name="skor" value="<?php echo $_GET['nilai'] ?>">
+        <input type="hidden" name="skor" value="<?php echo $_GET['nilai'] ; ?>">
+	<input type="hidden" name="nama" value="<?php echo $_SESSION['nama'] ; ?>">
+	  
     </form>
 
 <?php
 	include 'koneksi.php';
      $nilai = $_GET['nilai'];
-     if(!isset($_POST['skor'])){
+     $name = $_POST['nama'];
+     if(isset($_POST['skor'])){
           $sql = "INSERT INTO skor (nama, nilai) VALUES ('$nama', '$nilai')";
 
          if(mysqli_query($link, $sql)){
              // echo "Data Berhasil Ditambahkan";
          }else{
-             $sql2 = "update skor set nilai = $_GET['nilai'] where nama = '$_SESSION['nama']'";
+             $sql2 = "update skor set nilai = $nilai where nama = '$name' ";
              if ($link->query($sql2) === TRUE) {
               //  echo "Record updated successfully";
               } else {
