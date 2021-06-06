@@ -168,7 +168,7 @@ if($_SESSION['nama']=='')
 	include 'koneksi.php';
      $nilai = $_GET['nilai'];
      $name = $_POST['nama'];
-     if(isset($_POST['skor'])){
+     if(!isset($_POST['skor'])){
           $sql = "INSERT INTO skor (nama, nilai) VALUES ('$nama', '$nilai')";
 
          if(mysqli_query($link, $sql)){
