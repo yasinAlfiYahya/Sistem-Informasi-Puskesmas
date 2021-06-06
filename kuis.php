@@ -175,7 +175,7 @@ if($_SESSION['nama']=='')
              // echo "Data Berhasil Ditambahkan";
          }else{
 		 
-		echo 'test'.  $link->error;
+		//echo 'test'.  $link->error;
              $sql2 = "update skor set nilai = $nilai where nama = '$name' ";
              if ($link->query($sql2) === TRUE) {
               //  echo "Record updated successfully";
