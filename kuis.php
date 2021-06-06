@@ -167,7 +167,7 @@ if($_SESSION['nama']=='')
 <?php
 	include 'koneksi.php';
      $nilai = $_GET['nilai'];
-     $name = $_POST['nama'];
+     $name = $_SESSION['nama'];
      if(!isset($_POST['skor'])){
           $sql = "INSERT INTO skor (nama, nilai) VALUES ('$nama', '$nilai')";
 
@@ -176,7 +176,7 @@ if($_SESSION['nama']=='')
          }else{
 		 
 		//echo 'test'.  $link->error;
-             $sql2 = "update skor set nilai = $nilai where nama = 'Rahmat Hidayat' ";
+             $sql2 = "update skor set nilai = $nilai where nama = '$name' ";
              if ($link->query($sql2) === TRUE) {
               //  echo "Record updated successfully";
               } else {
