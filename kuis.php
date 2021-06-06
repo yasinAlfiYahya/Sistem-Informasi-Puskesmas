@@ -180,7 +180,7 @@ if($_SESSION['nama']=='')
              if ($link->query($sql2) === TRUE) {
               //  echo "Record updated successfully";
               } else {
-                echo "Error updating record: " . $link->error;
+                //echo "Error updating record: " . $link->error;
               }
          }
 
