@@ -171,7 +171,7 @@ if($_SESSION['nama']=='')
          if(mysqli_query($link, $sql)){
              // echo "Data Berhasil Ditambahkan";
          }else{
-             $sql2 = "update skor set nilai = '$nilai' where nama = '$nama'";
+             $sql2 = "update skor set nilai = $nilai where nama = '$nama'";
              if ($link->query($sql2) === TRUE) {
               //  echo "Record updated successfully";
               } else {
@@ -205,7 +205,7 @@ if($_SESSION['nama']=='')
         echo '<div class="card-header bg-success text-white">';
 	        echo '5 Peringkat Kuis Terbaik';
 	    echo '</div>';
-          $sql = "SELECT * FROM skor ORDER BY nilai desc" ;
+          $sql = "SELECT * FROM skor order by nilai desc limit 5" ;
                  
           if($result = mysqli_query($link, $sql)){
             if(mysqli_num_rows($result) > 0){
