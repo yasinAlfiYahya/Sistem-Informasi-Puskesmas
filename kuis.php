@@ -176,7 +176,7 @@ if($_SESSION['nama']=='')
          }else{
 		 
 		//echo 'test'.  $link->error;
-             $sql2 = "update skor set nilai = $nilai where nama = '$name' ";
+             $sql2 = "update skor set nilai = $nilai where nama = 'Rahmat Hidayat' ";
              if ($link->query($sql2) === TRUE) {
               //  echo "Record updated successfully";
               } else {
