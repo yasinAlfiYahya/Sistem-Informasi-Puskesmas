@@ -171,7 +171,7 @@ if($_SESSION['nama']=='')
          if(mysqli_query($link, $sql)){
              // echo "Data Berhasil Ditambahkan";
          }else{
-             $sql2 = "update skor set nilai = $nilai where nama = '$nama'";
+             $sql2 = "update skor set nilai = 10 where nama = '$nama'";
              if ($link->query($sql2) === TRUE) {
               //  echo "Record updated successfully";
               } else {
