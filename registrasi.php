@@ -209,14 +209,21 @@
                         
                        if(isset($_POST['submit'])){
                             $sql1 = "select * from akun where nik='$nik'";
-                            $hasil = mysqli_query ($link,$sql1);
-                            $jumlah = mysqli_num_rows($hasil);
-                            if ($jumlah == 0){
-                                $sql = "INSERT INTO akun (tipe_akun, nama, nik, alamat, jenis_kelamin, tanggal_lahir, email, password) VALUES ('$getTipe', '$name', '$nik','$alamat','$gender', '$tanggal', '$email', '$pass')";
-                                if(mysqli_query($link, $sql)){
-                                    echo "<script>document.location='login.php'</script>";
-                                } else{
-                                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                            $sql2 = "select * from akun where email='$email'";
+                            $hasil1 = mysqli_query ($link,$sql1);
+                            $jumlah1 = mysqli_num_rows($hasil1);
+                            $hasil2 = mysqli_query ($link,$sql2);
+                            $jumlah2 = mysqli_num_rows($hasil2);
+                            if ($jumlah1 == 0){
+                                if ($jumlah2 == 0){
+                                    $sql = "INSERT INTO akun (tipe_akun, nama, nik, alamat, jenis_kelamin, tanggal_lahir, email, password) VALUES ('$getTipe', '$name', '$nik','$alamat','$gender', '$tanggal', '$email', '$pass')";
+                                    if(mysqli_query($link, $sql)){
+                                        echo "<script>document.location='login.php'</script>";
+                                    } else{
+                                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                                    }
+                                }else {
+                                    echo "<script>alert('Email anda sudah di gunakan!');document.location='registrasi.php'</script>";
                                 }
                             }else {
                             echo "<script>alert('Nik anda sudah di gunakan!');document.location='registrasi.php'</script>";
